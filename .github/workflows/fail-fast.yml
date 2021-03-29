@@ -21,6 +21,10 @@ jobs:
           *) true;;
           esac
 
+      - name: cleanup
+        if: always()
+        run: echo doing cleanup for ${{ matrix.key }}
+
   see-results:
     needs: [fail-fast-test]
     runs-on: ubuntu-latest
