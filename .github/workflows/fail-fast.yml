@@ -17,7 +17,7 @@ jobs:
           echo "matrix.key = <${{ matrix.key }}>"
           set -x
           case ${{ matrix.key }} in
-          b) false;;
+          b) true;;
           *) true;;
           esac
 
