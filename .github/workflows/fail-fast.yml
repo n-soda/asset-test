@@ -23,6 +23,7 @@ jobs:
 
   see-results:
     needs: [fail-fast-test]
+    runs-on: ubuntu-latest
 
     steps:
       - run: echo running see-results job
