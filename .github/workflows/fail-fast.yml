@@ -1,3 +1,6 @@
+name: fail-fast test
+  on: [push]
+
 jobs:
 
   fail-fast-test:
