@@ -1,0 +1,24 @@
+jobs:
+
+  fail-fast-test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        key: [a, b, c]
+
+    steps:
+      - name: eval
+        run: |
+          echo "matrix.key = <${{ matrix.key }}>"
+          set -x
+          case ${{ matrix.key }} in
+          b) false;;
+          *) true;;
+          esac
+
+  see-results:
+    needs: [fail-fast-test]
+
+    steps:
+      - run: echo running see-results job
